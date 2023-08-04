@@ -11,7 +11,7 @@ endif
 CC ?= gcc
 CFLAGS += -Wall -static
 HEADERS = minivtun.h library.h list.h jhash.h
-
+LDFLAGS += --static
 minivtun: minivtun.o library.o server.o client.o
 	$(CC) $(LDFLAGS) -o $@ $^ -lcrypto
 
